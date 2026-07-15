@@ -5,16 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arslan Daim | AI & Android Developer</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="hero" style="background-image: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.95)), url('assets/hero-bg.jpg');">
-        <div class="hero-content">
+    <div class="bg-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <header class="hero">
+        <div class="hero-content glass-panel">
             <h1>Arslan Daim</h1>
-            <p>Building high-performance, open-source Android experiences.</p>
+            <p>Crafting high-performance, open-source Android experiences.</p>
             <div class="hero-links">
-                <a href="#apps" class="btn primary-btn">View Applications</a>
-                <a href="https://github.com/Arslandaim-hub" target="_blank" class="btn secondary-btn">
+                <a href="#apps" class="btn glass-btn-primary">View Applications</a>
+                <a href="https://github.com/Arslandaim-hub" target="_blank" class="btn glass-btn-secondary">
                     <img src="assets/github.svg" alt="GitHub" class="icon"> GitHub
                 </a>
             </div>
@@ -26,28 +32,28 @@
             <h2 class="section-title">My Applications</h2>
             
             <div class="app-grid">
-                <article class="app-card">
+                <article class="app-card glass-panel">
                     <div class="app-header">
-                        <img src="assets/icon.png" alt="PlayTube Icon" class="app-icon" onerror="this.src='https://via.placeholder.com/64'">
+                        <img src="assets/playtubeicon.png" alt="PlayTube Icon" class="app-icon" onerror="this.src='https://via.placeholder.com/64'">
                         <h3>PlayTube</h3>
                     </div>
                     <p class="app-description">
-                       Watch YouTube videos without any Ads. No Gmail required and supports high quality video/audio downloads
+                        Free YouTube client for android. Watch & download YouTube videos with no Ads, tracking or data collection. 
                     </p>
                     <div class="screenshots">
                         <img src="assets/playtubefeatureGraphic.png" alt="PlayTube Screenshot 1" onerror="this.src='https://via.placeholder.com/150x300'">
-                        <img src="assets/screenshots/omegaplayer-2.png" alt="PlayTube Screenshot 2" onerror="this.src='https://via.placeholder.com/150x300'">
+                        <img src="assets/screenshots/omegaplayer-2.png" alt="OmegaPlayer Screenshot 2" onerror="this.src='https://via.placeholder.com/150x300'">
                     </div>
                     <div class="app-actions">
-                        <a href="#" class="btn outline-btn">Source Code</a>
-                        <a href="#" class="btn primary-btn">Get on F-Droid</a>
+                        <a href="#" class="btn glass-btn-secondary">Source Code</a>
+                        <a href="#" class="btn glass-btn-primary">Get on F-Droid</a>
                     </div>
                 </article>
 
-                <article class="app-card">
+                <article class="app-card glass-panel">
                     <div class="app-header">
                         <img src="assets/playtube-icon.png" alt="PlayTube Icon" class="app-icon" onerror="this.src='https://via.placeholder.com/64'">
-                        <h3>OmegaPlayer</h3>
+                        <h3>PlayTube</h3>
                     </div>
                     <p class="app-description">
                         A modern and intuitive media application built natively for Android, delivering smooth playback and a clean user interface.
@@ -57,15 +63,15 @@
                         <img src="assets/screenshots/playtube-2.png" alt="PlayTube Screenshot 2" onerror="this.src='https://via.placeholder.com/150x300'">
                     </div>
                     <div class="app-actions">
-                        <a href="#" class="btn outline-btn">Source Code</a>
-                        <a href="#" class="btn primary-btn">Download APK</a>
+                        <a href="#" class="btn glass-btn-secondary">Source Code</a>
+                        <a href="#" class="btn glass-btn-primary">Download APK</a>
                     </div>
                 </article>
             </div>
         </div>
     </main>
 
-    <footer>
+    <footer class="glass-footer">
         <div class="container">
             <p>&copy; 2026 Arslan Daim. All rights reserved.</p>
         </div>
