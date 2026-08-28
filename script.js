@@ -1,31 +1,38 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Reveal app cards and hero content on load/scroll
-    const glassPanels = document.querySelectorAll('.glass-panel');
+    // 1. Reveal Hero Section immediately on load
+    const heroPanel = document.querySelector('.hero-content');
+    if (heroPanel) {
+        heroPanel.style.opacity = '0';
+        heroPanel.style.transform = 'translateY(20px)';
+        
+        // Slight delay for a smoother entrance
+        setTimeout(() => {
+            heroPanel.style.transition = 'all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1)';
+            heroPanel.style.opacity = '1';
+            heroPanel.style.transform = 'translateY(0)';
+        }, 150);
+    }
 
-    // Initial state for animation
-    glassPanels.forEach((panel, index) => {
-        panel.style.opacity = '0';
-        panel.style.transform = 'translateY(40px)';
-        panel.style.transition = `opacity 0.8s cubic-bezier(0.25, 0.8, 0.25, 1) ${index * 0.1}s, 
-                                  transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1) ${index * 0.1}s`;
-    });
+    // 2. High-performance scroll reveal using Intersection Observer
+    const animatedElements = document.querySelectorAll('.fade-in');
 
-    const revealPanels = () => {
-        const triggerBottom = window.innerHeight * 0.85;
-
-        glassPanels.forEach(panel => {
-            const panelTop = panel.getBoundingClientRect().top;
-
-            if (panelTop < triggerBottom) {
-                panel.style.opacity = '1';
-                panel.style.transform = 'translateY(0)';
-            }
-        });
+    const observerOptions = {
+        root: null, // use viewport
+        rootMargin: '0px',
+        threshold: 0.15 // trigger when 15% of the element is visible
     };
 
-    // Run immediately for the hero section
-    setTimeout(revealPanels, 100);
-    
-    // Listen for scroll for the rest of the page
-    window.addEventListener('scroll', revealPanels);
+    const scrollObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                // Optional: Stop observing once it has faded in to improve performance
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    animatedElements.forEach(element => {
+        scrollObserver.observe(element);
+    });
 });
